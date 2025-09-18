@@ -25,21 +25,47 @@
 
 <body class="font-inter bg-white text-gray-900">
 
+<body class="font-inter bg-black text-white">
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
 
-            <!-- Logo + Text -->
+            <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
                 <span class="text-2xl font-bold">
                     <span class="text-gold">Teens</span> <span class="text-white">Church</span>
                 </span>
             </div>
-            <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="hover:text-gold">Home</a>
-                <a href="books.html" class="text-gold border-b-2 border-gold">Books</a>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 font-medium">
+                <a href="index.html" class="nav-link hover:text-gold">Home</a>
+                <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
+                <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
+                <a href="about.html" class="nav-link hover:text-gold">About Us</a>
+                <a href="books.html" class="nav-link hover active:text-gold">Books</a>
+                <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
+                <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
             </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="menu-btn" class="focus:outline-none">
+                    <i data-feather="menu"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (only one copy!) -->
+        <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
+            <a href="index.html" class="hover:text-gold">Home</a>
+            <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
+            <a href="mission.html" class="hover:text-gold">Our Mission</a>
+            <a href="about.html" class="hover:text-gold">About Us</a>
+            <a href="books.html" class="hover active:text-gold">Books</a>
+            <a href="gallery.html" class="hover:text-gold">Gallery</a>
+            <a href="contact.html" class="hover:text-gold">Contact</a>
         </div>
     </nav>
 
@@ -70,6 +96,33 @@
             <p>&copy; 2025 Winners Teens Osimore • All Rights Reserved</p>
         </div>
     </footer>
+
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        function showSlide(n) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        function nextSlide() { showSlide(currentSlide + 1); }
+        setInterval(nextSlide, 5000);
+
+        feather.replace();
+
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        if (menuBtn) {
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        }
+
+
+    </script>
+
 </body>
 
 </html>
