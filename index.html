@@ -300,16 +300,19 @@
         }
         function nextSlide() { showSlide(currentSlide + 1); }
         setInterval(nextSlide, 5000);
+
         feather.replace();
 
-        const menuBtn = document.querySelector("[data-feather='menu']").parentElement;
+        const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
 
-        menuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
+        if (menuBtn) {
+            menuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        }
 
-        feather.replace();
+
     </script>
 
 
