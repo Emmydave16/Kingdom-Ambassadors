@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Understanding Divine Direction | Winners Teens Osimore</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
     <script>
         tailwind.config = {
             theme: {
@@ -23,15 +24,13 @@
     </script>
 </head>
 
-<body class="font-inter bg-white text-gray-900">
-
 <body class="font-inter bg-black text-white">
+
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
-
             <!-- Logo -->
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3" data-aos="fade-right">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
                 <span class="text-2xl font-bold">
                     <span class="text-gold">Teens</span> <span class="text-white">Church</span>
@@ -39,31 +38,35 @@
             </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="nav-link hover:text-gold">Home</a>
-                <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
-                <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
-                <a href="about.html" class="nav-link hover:text-gold">About Us</a>
-                <a href="books.html" class="nav-link hover active:text-gold">Books</a>
-                <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
-                <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
+            <div class="hidden md:flex space-x-8 font-medium" data-aos="fade-left">
+                <a href="index.html" class="hover:text-gold">Home</a>
+                <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
+                <a href="mission.html" class="hover:text-gold">Our Mission</a>
+                <a href="about.html" class="hover:text-gold">About Us</a>
+                <a href="books.html" class="hover:text-gold">Books</a>
+                <a href="gallery.html" class="hover:text-gold">Gallery</a>
+                <a href="contact.html" class="hover:text-gold">Contact</a>
             </div>
 
             <!-- Mobile Menu Button -->
             <div class="md:hidden">
                 <button id="menu-btn" class="focus:outline-none">
-                    <i data-feather="menu"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24"
+                        stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
                 </button>
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
-        <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
             <a href="mission.html" class="hover:text-gold">Our Mission</a>
             <a href="about.html" class="hover:text-gold">About Us</a>
-            <a href="books.html" class="hover active:text-gold">Books</a>
+            <a href="books.html" class="hover:text-gold">Books</a>
             <a href="gallery.html" class="hover:text-gold">Gallery</a>
             <a href="contact.html" class="hover:text-gold">Contact</a>
         </div>
@@ -71,7 +74,7 @@
 
     <!-- Hero Section -->
     <section class="h-72 flex items-center justify-center bg-maroon text-center text-white">
-        <div class="p-8">
+        <div class="p-8" data-aos="zoom-in" data-aos-delay="200">
             <h1 class="text-4xl font-bold text-gold">Understanding Divine Direction</h1>
             <p class="mt-4 text-lg">By Bishop David Oyedepo</p>
         </div>
@@ -79,49 +82,33 @@
 
     <!-- Book Viewer -->
     <section class="py-16 px-6 md:px-16 bg-gray-100">
-        <div class="bg-white shadow-md rounded-lg p-6 text-center">
+        <div class="bg-white shadow-lg rounded-lg p-6 text-center" data-aos="fade-up">
             <h3 class="text-xl font-bold text-maroon mb-4">Understanding Divine Direction</h3>
             <a href="assets/Understanding Divine Direction - David Oyedepo.pdf" target="_blank"
-                class="inline-block bg-maroon text-white px-6 py-3 rounded-lg font-medium hover:bg-gold hover:text-maroon transition">
+                class="inline-block bg-maroon text-white px-6 py-3 rounded-lg font-medium hover:bg-gold hover:text-maroon transition transform hover:scale-105 duration-300">
                 Read / Download
             </a>
-        </div>
-
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="bg-gradient-to-r from-black to-maroon py-12 px-4 md:px-8 text-white">
-        <div class="max-w-7xl mx-auto text-center border-t border-gold pt-8">
+        <div class="max-w-7xl mx-auto text-center border-t border-gold pt-8" data-aos="fade-up">
             <p>&copy; 2025 Winners Teens Osimore • All Rights Reserved</p>
         </div>
     </footer>
 
-        <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
-        feather.replace();
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
 
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
-        if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
-
-
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
     </script>
-
 </body>
 
 </html>

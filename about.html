@@ -10,6 +10,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+    <!-- ✅ AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
@@ -27,11 +29,6 @@
     </script>
 
     <style>
-        .navbar {
-            backdrop-filter: blur(10px);
-            background-color: rgba(128, 0, 0, 0.85);
-        }
-
         .nav-link:hover {
             color: #f5c542;
         }
@@ -39,15 +36,6 @@
         .nav-link.active {
             color: #f5c542;
             border-bottom: 2px solid #f5c542;
-        }
-
-        .btn-primary {
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary:hover {
-            background-color: white;
-            color: #800000;
         }
     </style>
 </head>
@@ -57,9 +45,8 @@
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
-
             <!-- Logo -->
-            <div class="flex items-center space-x-3">
+            <div class="flex items-center space-x-3" data-aos="fade-down">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
                 <span class="text-2xl font-bold">
                     <span class="text-gold">Teens</span> <span class="text-white">Church</span>
@@ -67,12 +54,12 @@
             </div>
 
             <!-- Desktop Nav -->
-            <div class="hidden md:flex space-x-8 font-medium">
+            <div class="hidden md:flex space-x-8 font-medium" data-aos="fade-down" data-aos-delay="100">
                 <a href="index.html" class="nav-link hover:text-gold">Home</a>
                 <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
                 <a href="vision.html" class="nav-link hover:text-gold">Our Vision</a>
                 <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
-                <a href="about.html" class="nav-link hover:text-gold">About Us</a>
+                <a href="about.html" class="nav-link active hover:text-gold">About Us</a>
                 <a href="books.html" class="nav-link hover:text-gold">Books</a>
                 <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
                 <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
@@ -86,12 +73,12 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
             <a href="mission.html" class="hover:text-gold">Our Mission</a>
-            <a href="about.html" class="hover active:text-gold">About Us</a>
+            <a href="about.html" class="hover:text-gold">About Us</a>
             <a href="books.html" class="hover:text-gold">Books</a>
             <a href="gallery.html" class="hover:text-gold">Gallery</a>
             <a href="contact.html" class="hover:text-gold">Contact</a>
@@ -99,14 +86,11 @@
     </nav>
 
 
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="h-[36rem] bg-cover bg-top flex items-center justify-center relative"
         style="background-image: url('./assets/lfc6.jpg')">
-        <!-- Dark overlay -->
         <div class="absolute inset-0 bg-black bg-opacity-50"></div>
-
-        <!-- Text -->
-        <div class="relative text-center max-w-3xl px-6">
+        <div class="relative text-center max-w-3xl px-6" data-aos="zoom-in">
             <h1 class="text-5xl font-bold text-gold">About Us</h1>
             <p class="mt-4 text-lg text-white">
                 Worthy Ambassadors of Christ, shining His light to our world.
@@ -114,26 +98,23 @@
         </div>
     </section>
 
-
     <!-- Content -->
     <section class="py-16 px-6 md:px-16 bg-maroon text-white">
-        <div class="max-w-4xl mx-auto text-center space-y-6">
-            <p class="text-lg leading-relaxed">
-                We are a people of grace, glory, and power set to shake the world for Jesus, and represent Him as Worthy
-                Ambassadors of the Kingdom.
+        <div class="max-w-4xl mx-auto text-center space-y-8">
+            <p class="text-lg leading-relaxed" data-aos="fade-up">
+                We are a people of grace, glory, and power set to shake the world for Jesus,
+                representing Him as Worthy Ambassadors of the Kingdom.
             </p>
-            <p class="text-lg leading-relaxed">
+            <p class="text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="100">
                 As Kingdom Ambassadors, we represent Christ in deed and character, made worthy of our calling as we grow
-                and
-                aspire for excellence, in atmosphere of worship, praise, and soul-lifting encounters that pervade our
-                services.
+                and aspire for excellence, in an atmosphere of worship, praise, and soul-lifting encounters.
             </p>
-            <p class="text-lg leading-relaxed">
+            <p class="text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="200">
                 <span class="text-gold font-semibold">Matthew 6:33</span> drives our conviction as we seek first the
                 things of
                 God's kingdom, so that all other wonderful things are added to us in our glorious journey.
             </p>
-            <p class="text-lg leading-relaxed">
+            <p class="text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="300">
                 We are happy to receive you and welcome you to our midst to enjoy the warmth and fellowship under
                 Christ's love.
             </p>
@@ -144,11 +125,11 @@
     <footer class="bg-maroon py-12 px-4 md:px-8 text-white">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
+                <div data-aos="fade-right">
                     <h3 class="text-xl font-bold mb-4 text-gold">Teens Church</h3>
                     <p>Empowering teenagers with divine wisdom and knowledge for victorious living.</p>
                 </div>
-                <div>
+                <div data-aos="fade-up">
                     <h3 class="text-xl font-bold mb-4 text-gold">Quick Links</h3>
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-gold">Home</a></li>
@@ -157,16 +138,15 @@
                         <li><a href="about.html" class="hover:text-gold">About Us</a></li>
                     </ul>
                 </div>
-                <div>
+                <div data-aos="fade-left">
                     <h3 class="text-xl font-bold mb-4 text-gold">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        <a href="https://www.instagram.com/lfcijebuodeteens"
                             class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon">
                             <i data-feather="instagram"></i>
                         </a>
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/234XXXXXXXXXX"
-                            class="w-10 h-10 rounded-full bg-gold text-maroon flex items-center justify-center hover:bg-white hover:text-maroon">
+                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon">
                             <i data-feather="message-circle"></i>
                         </a>
                     </div>
@@ -178,30 +158,14 @@
         </div>
     </footer>
 
-
+    <!-- JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
+        AOS.init({ once: true, duration: 1000 });
         feather.replace();
-
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
-        if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
-
-
+        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
     </script>
 </body>
 

@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teens Church – Our Mission</title>
+
+    <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -25,12 +32,8 @@
             }
         }
     </script>
-    <style>
-        .navbar {
-            backdrop-filter: blur(10px);
-            background-color: rgba(0, 0, 0, 0.6);
-        }
 
+    <style>
         .nav-link:hover {
             color: #f5c542;
         }
@@ -39,14 +42,24 @@
             color: #f5c542;
             border-bottom: 2px solid #f5c542;
         }
+
+        @keyframes slowzoom {
+            0% {
+                transform: scale(1);
+            }
+
+            100% {
+                transform: scale(1.05);
+            }
+        }
     </style>
 </head>
 
 <body class="font-inter bg-black text-white">
-    <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
 
+    <!-- ✅ Navbar -->
+    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
@@ -59,7 +72,7 @@
             <div class="hidden md:flex space-x-8 font-medium">
                 <a href="index.html" class="nav-link hover:text-gold">Home</a>
                 <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
-                <a href="mission.html" class="nav-link active hover:text-gold">Our Mission</a>
+                <a href="mission.html" class="nav-link active">Our Mission</a>
                 <a href="about.html" class="nav-link hover:text-gold">About Us</a>
                 <a href="books.html" class="nav-link hover:text-gold">Books</a>
                 <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
@@ -74,11 +87,11 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
-            <a href="mission.html" class="hover active:text-gold">Our Mission</a>
+            <a href="mission.html" class="text-gold">Our Mission</a>
             <a href="about.html" class="hover:text-gold">About Us</a>
             <a href="books.html" class="hover:text-gold">Books</a>
             <a href="gallery.html" class="hover:text-gold">Gallery</a>
@@ -86,25 +99,28 @@
         </div>
     </nav>
 
+    <!-- ✅ Hero Section -->
+    <section class="relative h-[32rem] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <img src="./assets/bishop1.jpg" alt="Bishop"
+            class="absolute inset-0 w-full h-full object-cover object-top animate-[slowzoom_20s_ease-in-out_infinite_alternate]" />
 
-    <!-- Hero Section -->
-    <section class="h-[32rem] bg-cover bg-top flex items-center relative"
-        style="background-image: url('./assets/bishop1.jpg')">
         <!-- Overlay -->
-        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+        <div class="absolute inset-0 bg-black/50"></div>
+
         <!-- Text Box -->
-        <div class="absolute bottom-10 left-10 bg-maroon/80 border-l-4 border-gold p-6 rounded-r-lg shadow-lg max-w-xl">
+        <div class="relative z-10 bg-maroon/80 border-l-4 border-gold p-6 rounded-r-lg shadow-lg max-w-xl"
+            data-aos="zoom-in">
             <h1 class="text-4xl font-bold text-gold">Our Mission</h1>
-            <p class="mt-4 text-lg text-white">To nurture teenagers into spiritual giants, full of faith, purpose, and
-                impact.</p>
+            <p class="mt-4 text-lg text-white">
+                To nurture teenagers into spiritual giants, full of faith, purpose, and impact.
+            </p>
         </div>
     </section>
 
-
-
-    <!-- Content -->
-    <section class="py-16 px-6 md:px-16 bg-maroon">
-        <div class="max-w-4xl mx-auto text-center text-white">
+    <!-- ✅ Mission Content -->
+    <section class="py-20 px-6 md:px-16 bg-maroon">
+        <div class="max-w-4xl mx-auto text-center text-white" data-aos="fade-up">
             <h2 class="text-3xl font-bold mb-6 text-gold">Why We Exist</h2>
             <p class="text-lg leading-relaxed">
                 Our mission is to build a strong foundation of faith in the lives of teenagers, equipping them with
@@ -114,13 +130,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-maroon py-12 px-4 md:px-8 text-white">
+    <!-- ✅ Footer -->
+    <footer class="bg-maroon py-12 px-4 md:px-8 text-white" data-aos="fade-up">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Teens Church</h3>
-                    <p>Empowering teenagers with divine wisdom and knowledge for victorious living.</p>
+                    <p>
+                        Empowering teenagers with divine wisdom and knowledge for victorious living.
+                    </p>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Quick Links</h3>
@@ -128,55 +146,40 @@
                         <li><a href="index.html" class="hover:text-gold">Home</a></li>
                         <li><a href="mandate.html" class="hover:text-gold">Our Mandate</a></li>
                         <li><a href="mission.html" class="hover:text-gold">Our Mission</a></li>
-                        <!-- <li><a href="mission.html" class="hover:text-gold">Our Mission</a></li> -->
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon">
+                        <a href="https://www.instagram.com/lfcijebuodeteens"
+                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon transition">
                             <i data-feather="instagram"></i>
                         </a>
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/234XXXXXXXXXX"
-                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon">
+                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon transition">
                             <i data-feather="message-circle"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="pt-8 border-t border-gold text-center">
+            <div class="pt-8 border-t border-gold/40 text-center">
                 <p>&copy; 2025 Teens Church. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-
+    <!-- ✅ Scripts -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
         feather.replace();
+        AOS.init({ duration: 800, once: true });
 
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
         if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
+            menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
         }
-
-
     </script>
+
 </body>
 
 </html>

@@ -5,11 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books of the Commission - Winners Teens Osimore</title>
+
+    <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -21,16 +24,21 @@
                     fontFamily: {
                         inter: ['Inter', 'sans-serif'],
                     },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: 0, transform: 'translateY(30px)' },
+                            '100%': { opacity: 1, transform: 'translateY(0)' }
+                        }
+                    },
+                    animation: {
+                        fadeUp: 'fadeUp 1s ease forwards'
+                    }
                 }
             }
         }
     </script>
-    <style>
-        .navbar {
-            backdrop-filter: blur(10px);
-            background-color: rgba(0, 0, 0, 0.7);
-        }
 
+    <style>
         .nav-link:hover {
             color: #f5c542;
         }
@@ -55,7 +63,6 @@
     <!-- Navbar -->
     <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
-
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
@@ -70,7 +77,7 @@
                 <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
                 <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
                 <a href="about.html" class="nav-link hover:text-gold">About Us</a>
-                <a href="books.html" class="nav-link hover active:text-gold">Books</a>
+                <a href="books.html" class="nav-link active hover:text-gold">Books</a>
                 <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
                 <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
             </div>
@@ -83,7 +90,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
@@ -95,11 +102,10 @@
         </div>
     </nav>
 
-
-
     <!-- Hero -->
-    <section class="h-64 md:h-80 bg-gradient-to-b from-maroon to-black flex items-center justify-center text-center">
-        <div class="px-4">
+    <section
+        class="h-64 md:h-80 bg-gradient-to-b from-maroon to-black flex items-center justify-center text-center pt-20">
+        <div class="px-4 animate-fadeUp">
             <h1 class="text-4xl md:text-5xl font-bold text-gold">Books of the Commission</h1>
             <p class="mt-4 text-gray-300">Inspirational books by Bishop David Oyedepo & other anointed ministers</p>
         </div>
@@ -108,10 +114,11 @@
     <!-- Books Section -->
     <section class="py-16 px-4 md:px-8 bg-gradient-to-b from-black to-gray-900">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">Explore Our Books</h2>
+            <h2 class="text-3xl font-bold text-center mb-12 animate-fadeUp">Explore Our Books</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-                <div class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition">
+                <!-- Book 1 -->
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition transform opacity-0 slide-in">
                     <h3 class="text-xl font-semibold text-gold mb-4">Keys to Divine Health</h3>
                     <p class="mb-6">A revelation on God’s plan for healthy living.</p>
                     <a href="Keys-to-divine-health.html"
@@ -119,7 +126,9 @@
                         More</a>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition">
+                <!-- Book 2 -->
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition transform opacity-0 slide-in">
                     <h3 class="text-xl font-semibold text-gold mb-4">Understanding Divine Direction</h3>
                     <p class="mb-6">Discover how to walk in God’s plan for your life.</p>
                     <a href="divine-direction.html"
@@ -127,10 +136,11 @@
                         More</a>
                 </div>
 
-                <div class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition">
+                <!-- Book 3 -->
+                <div
+                    class="bg-gray-800 p-6 rounded-lg text-center hover:scale-105 transition transform opacity-0 slide-in">
                     <h3 class="text-xl font-semibold text-gold mb-4">Conquering Controlling Powers</h3>
-                    <p class="mb-6"> identifies the spirits of darkness that hold men captive thereby controlling them,
-                        doing things contrary to the will of the Father</p>
+                    <p class="mb-6">Identifies spirits of darkness that hold men captive, acting against God’s will.</p>
                     <a href="conquering-controlling-powers.html"
                         class="btn-primary inline-block bg-gold text-maroon font-semibold py-2 px-6 rounded-full">Read
                         More</a>
@@ -159,14 +169,12 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold hover:text-maroon"><i
-                                data-feather="instagram"></i></a>
-                        <!-- WhatsApp -->
+                        <a href="https://www.instagram.com/lfcijebuodeteens"
+                            class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold hover:text-maroon">
+                            <i data-feather="instagram"></i></a>
                         <a href="https://wa.me/234XXXXXXXXXX"
                             class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-gold hover:text-maroon">
-                            <i data-feather="message-circle"></i>
-                        </a>
+                            <i data-feather="message-circle"></i></a>
                     </div>
                 </div>
             </div>
@@ -176,30 +184,25 @@
         </div>
     </footer>
 
-
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
         feather.replace();
 
+        // Mobile menu toggle
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
 
-        if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
+        // Scroll animation for book cards
+        const slideIns = document.querySelectorAll(".slide-in");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-fadeUp");
+                    entry.target.classList.remove("opacity-0");
+                }
             });
-        }
-
-
+        }, { threshold: 0.2 });
+        slideIns.forEach(el => observer.observe(el));
     </script>
 </body>
 

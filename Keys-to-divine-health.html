@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keys to Divine Health | Winners Teens Osimore</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
     <script>
         tailwind.config = {
             theme: {
@@ -17,6 +18,25 @@
                     fontFamily: {
                         inter: ['Inter', 'sans-serif'],
                     },
+                    keyframes: {
+                        fadeUp: {
+                            '0%': { opacity: '0', transform: 'translateY(40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        fadeDown: {
+                            '0%': { opacity: '0', transform: 'translateY(-40px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        pulseGlow: {
+                            '0%,100%': { boxShadow: '0 0 0 0 rgba(245,197,66,0.7)' },
+                            '50%': { boxShadow: '0 0 30px 8px rgba(245,197,66,0.3)' },
+                        }
+                    },
+                    animation: {
+                        fadeUp: 'fadeUp 1s ease-out forwards',
+                        fadeDown: 'fadeDown 1s ease-out forwards',
+                        pulseGlow: 'pulseGlow 3s ease-in-out infinite',
+                    }
                 }
             }
         }
@@ -26,9 +46,8 @@
 <body class="font-inter bg-white text-gray-900">
 
     <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
+    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md animate-fadeDown">
         <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
-
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
@@ -39,13 +58,13 @@
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="nav-link hover:text-gold">Home</a>
-                <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
-                <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
-                <a href="about.html" class="nav-link hover:text-gold">About Us</a>
-                <a href="books.html" class="nav-link hover active:text-gold">Books</a>
-                <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
-                <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
+                <a href="index.html" class="hover:text-gold transition">Home</a>
+                <a href="mandate.html" class="hover:text-gold transition">Our Mandate</a>
+                <a href="mission.html" class="hover:text-gold transition">Our Mission</a>
+                <a href="about.html" class="hover:text-gold transition">About Us</a>
+                <a href="books.html" class="hover:text-gold text-gold border-b-2 border-gold">Books</a>
+                <a href="gallery.html" class="hover:text-gold transition">Gallery</a>
+                <a href="contact.html" class="hover:text-gold transition">Contact</a>
             </div>
 
             <!-- Mobile Menu Button -->
@@ -56,69 +75,73 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
-        <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden animate-fadeDown">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
             <a href="mission.html" class="hover:text-gold">Our Mission</a>
             <a href="about.html" class="hover:text-gold">About Us</a>
-            <a href="books.html" class="hover active:text-gold">Books</a>
+            <a href="books.html" class="hover:text-gold text-gold">Books</a>
             <a href="gallery.html" class="hover:text-gold">Gallery</a>
             <a href="contact.html" class="hover:text-gold">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="h-72 flex items-center justify-center bg-maroon text-center text-white">
-        <div class="p-8">
-            <h1 class="text-4xl font-bold text-gold">Keys to Divine Health</h1>
-            <p class="mt-4 text-lg">By Bishop David Oyedepo</p>
+    <section
+        class="h-72 flex items-center justify-center bg-maroon text-center text-white relative overflow-hidden mt-16">
+        <!-- subtle moving glow -->
+        <div class="absolute inset-0 bg-gradient-to-r from-maroon via-maroon/80 to-maroon animate-pulseGlow"></div>
+        <div class="relative z-10 p-8">
+            <h1 class="text-4xl md:text-5xl font-bold text-gold animate-fadeUp">Keys to Divine Health</h1>
+            <p class="mt-4 text-lg animate-fadeUp" style="animation-delay:0.4s">By Bishop David Oyedepo</p>
         </div>
     </section>
 
     <!-- Book Viewer -->
     <section class="py-16 px-6 md:px-16 bg-gray-100">
-        <div class="bg-white shadow-md rounded-lg p-6 text-center">
-            <h3 class="text-xl font-bold text-maroon mb-4">Keys to Divine Health</h3>
+        <div
+            class="bg-white shadow-lg rounded-lg p-8 text-center transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl animate-fadeUp">
+            <h3 class="text-2xl font-bold text-maroon mb-6">Keys to Divine Health</h3>
             <a href="assets/Keys to divine health.pdf" target="_blank"
-                class="inline-block bg-maroon text-white px-6 py-3 rounded-lg font-medium hover:bg-gold hover:text-maroon transition">
+                class="inline-block bg-maroon text-white px-8 py-3 rounded-full font-medium hover:bg-gold hover:text-maroon transition duration-300">
                 Read / Download
             </a>
-        </div>
-
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gradient-to-r from-black to-maroon py-12 px-4 md:px-8 text-white">
-        <div class="max-w-7xl mx-auto text-center border-t border-gold pt-8">
-            <p>&copy; 2025 Winners Teens Osimore • All Rights Reserved</p>
-        </div>
+    <footer
+        class="bg-gradient-to-r from-black to-maroon py-12 px-4 md:px-8 text-white text-center border-t border-gold animate-fadeUp">
+        <p class="text-sm">&copy; 2025 Winners Teens Osimore • All Rights Reserved</p>
     </footer>
 
-        <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
+    <script>
         feather.replace();
 
+        // Mobile menu toggle
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
 
-        if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
+        // Intersection Observer for scroll fadeUp
+        const faders = document.querySelectorAll(".animate-fadeUp");
+        const options = { threshold: 0.15 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("opacity-100");
+                }
             });
-        }
+        }, options);
 
-
+        faders.forEach(el => {
+            el.classList.add("opacity-0");
+            observer.observe(el);
+        });
     </script>
 
 </body>

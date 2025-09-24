@@ -5,13 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Winners Teens Osimore</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- ✅ Tailwind Config BEFORE CDN -->
     <script>
-        tailwind.config = {
+        tailwind = {
             theme: {
                 extend: {
                     colors: {
@@ -21,12 +18,38 @@
                     fontFamily: {
                         inter: ['Inter', 'sans-serif'],
                     },
-                }
-            }
-        }
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        zoomIn: {
+                            '0%': { transform: 'scale(0.95)', opacity: '0' },
+                            '100%': { transform: 'scale(1)', opacity: '1' },
+                        },
+                    },
+                    animation: {
+                        fadeIn: 'fadeIn 1s ease-out forwards',
+                        zoomIn: 'zoomIn 0.8s ease-out forwards',
+                    },
+                },
+            },
+        };
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
     <style>
         .navbar {
+            -webkit-backdrop-filter: blur(10px);
+            /* ✅ Safari/iPad support */
             backdrop-filter: blur(10px);
             background-color: rgba(128, 0, 0, 0.85);
         }
@@ -51,12 +74,11 @@
     </style>
 </head>
 
-
 <body class="font-inter bg-black text-white">
 
-    <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
+    <!-- ✅ Navbar -->
+    <nav class="navbar fixed w-full z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12 animate-fadeIn">
 
             <!-- Logo -->
             <div class="flex items-center space-x-3">
@@ -74,7 +96,7 @@
                 <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
                 <a href="about.html" class="nav-link hover:text-gold">About Us</a>
                 <a href="books.html" class="nav-link hover:text-gold">Books</a>
-                <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
+                <a href="gallery.html" class="nav-link hover:text-gold active">Gallery</a>
                 <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
             </div>
 
@@ -86,26 +108,24 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (only one copy!) -->
-        <div id="mobile-menu" class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden">
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden flex flex-col space-y-4 bg-maroon text-white px-6 py-4 md:hidden animate-fadeIn">
             <a href="index.html" class="hover:text-gold">Home</a>
             <a href="mandate.html" class="hover:text-gold">Our Mandate</a>
             <a href="mission.html" class="hover:text-gold">Our Mission</a>
             <a href="about.html" class="hover:text-gold">About Us</a>
             <a href="books.html" class="hover:text-gold">Books</a>
-            <a href="gallery.html" class="hover active:text-gold">Gallery</a>
+            <a href="gallery.html" class="hover:text-gold active:text-gold">Gallery</a>
             <a href="contact.html" class="hover:text-gold">Contact</a>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- ✅ Hero -->
     <section class="relative h-[500px] md:h-[600px] bg-cover bg-center flex items-center justify-center"
         style="background-image: url('./assets/lfc1_slideshow.jpg')">
-        <!-- Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-black/40 to-black/80"></div>
-
-        <!-- Content -->
-        <div class="relative z-10 text-center px-6">
+        <div class="relative z-10 text-center px-6 animate-fadeIn">
             <h1 class="text-5xl md:text-6xl font-bold text-gold drop-shadow-lg">Our Gallery</h1>
             <p class="mt-6 text-lg md:text-xl max-w-2xl mx-auto text-white drop-shadow">
                 A glimpse into our moments of worship, fellowship, and impact.
@@ -113,60 +133,59 @@
         </div>
     </section>
 
-
-    <!-- Gallery Grid -->
+    <!-- ✅ Gallery Grid -->
     <section class="py-16 px-6 md:px-16 bg-white text-black">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-10 text-maroon">Captured Moments</h2>
+            <h2 class="text-3xl font-bold text-center mb-10 text-maroon animate-fadeIn">Captured Moments</h2>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <!-- Replace with real images -->
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <!-- ✅ Example image card with zoomIn animation -->
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc2.jpg" alt="Gallery 1"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc3.jpg" alt="Gallery 2"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc4_slideshow.jpg" alt="Gallery 3"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc6.jpg" alt="Gallery 4"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc1_slideshow.jpg" alt="Gallery 5"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                <div class="overflow-hidden rounded-md shadow-lg">
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
                     <img src="assets/lfc5_slideshow.jpg" alt="Gallery 6"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                                <div class="overflow-hidden rounded-md shadow-lg">
-                    <img src="assets/choir.jpg" alt="Gallery 6"
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
+                    <img src="assets/choir.jpg" alt="Gallery 7"
                         class="w-full h-60 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                                <div class="overflow-hidden rounded-md shadow-lg">
-                    <img src="assets/choir1.jpg" alt="Gallery 6"
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
+                    <img src="assets/choir1.jpg" alt="Gallery 8"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                                <div class="overflow-hidden rounded-md shadow-lg">
-                    <img src="assets/drummer.jpg" alt="Gallery 6"
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
+                    <img src="assets/drummer.jpg" alt="Gallery 9"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
-                                <div class="overflow-hidden rounded-md shadow-lg">
-                    <img src="assets/preacher.jpg" alt="Gallery 6"
+                <div class="overflow-hidden rounded-md shadow-lg animate-zoomIn">
+                    <img src="assets/preacher.jpg" alt="Gallery 10"
                         class="w-full h-64 object-cover hover:scale-110 transition-transform duration-500">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-maroon py-12 px-4 md:px-8 text-white">
+    <!-- ✅ Footer -->
+    <footer class="bg-maroon py-12 px-4 md:px-8 text-white animate-fadeIn">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
@@ -186,13 +205,12 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon">
+                        <a href="https://www.instagram.com/lfcijebuodeteens"
+                            class="w-10 h-10 rounded-full bg-gold flex items-center justify-center hover:bg-white hover:text-maroon transition">
                             <i data-feather="instagram"></i>
                         </a>
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/234XXXXXXXXXX"
-                            class="w-10 h-10 rounded-full bg-gold text-maroon flex items-center justify-center hover:bg-white hover:text-maroon">
+                            class="w-10 h-10 rounded-full bg-gold text-maroon flex items-center justify-center hover:bg-white hover:text-maroon transition">
                             <i data-feather="message-circle"></i>
                         </a>
                     </div>
@@ -204,30 +222,17 @@
         </div>
     </footer>
 
-
+    <!-- ✅ Scripts -->
     <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        function showSlide(n) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            currentSlide = (n + slides.length) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
-
         feather.replace();
 
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
         if (menuBtn) {
             menuBtn.addEventListener("click", () => {
                 mobileMenu.classList.toggle("hidden");
             });
         }
-
-
     </script>
 </body>
 
