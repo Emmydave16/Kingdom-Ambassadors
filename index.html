@@ -5,12 +5,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Winners Teens Osimore</title>
+
+    <!-- Fonts & Tailwind -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="icon" href="assets/logo2-removebg-preview-removebg-preview.png">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- AOS Animation Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
     <script>
         tailwind.config = {
             theme: {
@@ -26,6 +31,7 @@
             }
         }
     </script>
+
     <style>
         .slideshow-container {
             position: relative;
@@ -57,11 +63,6 @@
             color: #f5c542;
         }
 
-        .nav-link.active {
-            color: #f5c542;
-            border-bottom: 2px solid #f5c542;
-        }
-
         .btn-primary {
             transition: all 0.3s ease;
         }
@@ -74,10 +75,10 @@
 </head>
 
 <body class="font-inter bg-white text-gray-900">
-    <!-- Navbar -->
-    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md">
-        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
 
+    <!-- Navbar -->
+    <nav class="bg-gradient-to-r from-maroon to-maroon/90 text-white fixed w-full z-50 shadow-md" data-aos="fade-down">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 md:px-12">
             <!-- Logo -->
             <div class="flex items-center space-x-3">
                 <img src="assets/winners_logo-removebg-preview.png" alt="Winners Chapel Logo" class="h-10 w-auto">
@@ -88,13 +89,13 @@
 
             <!-- Desktop Nav -->
             <div class="hidden md:flex space-x-8 font-medium">
-                <a href="index.html" class="nav-link active:text-gold">Home</a>
-                <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
-                <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
-                <a href="about.html" class="nav-link hover:text-gold">About Us</a>
-                <a href="books.html" class="nav-link hover:text-gold">Books</a>
-                <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
-                <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="mandate.html" class="nav-link">Our Mandate</a>
+                <a href="mission.html" class="nav-link">Our Mission</a>
+                <a href="about.html" class="nav-link">About Us</a>
+                <a href="books.html" class="nav-link">Books</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="contact.html" class="nav-link">Contact</a>
             </div>
 
             <!-- Mobile Button -->
@@ -107,16 +108,15 @@
 
         <!-- Mobile Nav Links -->
         <div id="mobile-menu" class="hidden md:hidden flex flex-col space-y-4 bg-maroon px-6 py-4">
-            <a href="index.html" class="nav-link active :text-gold">Home</a>
-            <a href="mandate.html" class="nav-link hover:text-gold">Our Mandate</a>
-            <a href="mission.html" class="nav-link hover:text-gold">Our Mission</a>
-            <a href="about.html" class="nav-link hover:text-gold">About Us</a>
-            <a href="books.html" class="nav-link hover:text-gold">Books</a>
-            <a href="gallery.html" class="nav-link hover:text-gold">Gallery</a>
-            <a href="contact.html" class="nav-link hover:text-gold">Contact</a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="mandate.html" class="nav-link">Our Mandate</a>
+            <a href="mission.html" class="nav-link">Our Mission</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="books.html" class="nav-link">Books</a>
+            <a href="gallery.html" class="nav-link">Gallery</a>
+            <a href="contact.html" class="nav-link">Contact</a>
         </div>
     </nav>
-
 
     <!-- Slideshow Hero -->
     <div class="slideshow-container">
@@ -125,7 +125,7 @@
         <div class="slide" style="background-image: url('./assets/lfc3.jpg')"></div>
 
         <div class="absolute inset-0 bg-maroon/40 flex items-center justify-center">
-            <div class="text-center px-4 max-w-4xl text-white">
+            <div class="text-center px-4 max-w-4xl text-white" data-aos="zoom-in">
                 <h1 class="text-4xl md:text-6xl font-bold mb-6">Welcome to Winners Teens Osimore</h1>
                 <p class="text-xl mb-8">Empowering the next generation with faith, knowledge and divine direction</p>
                 <div class="flex flex-wrap justify-center gap-4">
@@ -147,18 +147,18 @@
     <!-- Service Times -->
     <section class="py-16 px-4 md:px-8 bg-gray-200 text-maroon">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-maroon">Our Service Times</h2>
+            <h2 data-aos="fade-up" class="text-3xl font-bold text-maroon">Our Service Times</h2>
             <div class="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white text-maroon p-6 rounded-lg shadow">
-                    <h3 class="text-xl font-semibold mb-2"> Sunday | First Service</h3>
+                <div data-aos="fade-up" data-aos-delay="100" class="bg-white text-maroon p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mb-2">Sunday | First Service</h3>
                     <p>7:00 AM</p>
                 </div>
-                <div class="bg-white text-maroon p-6 rounded-lg shadow">
+                <div data-aos="fade-up" data-aos-delay="200" class="bg-white text-maroon p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-2">Sunday | Second Service</h3>
                     <p>9:15 AM</p>
                 </div>
-                <div class="bg-white text-maroon p-6 rounded-lg shadow">
+                <div data-aos="fade-up" data-aos-delay="300" class="bg-white text-maroon p-6 rounded-lg shadow">
                     <h3 class="text-xl font-semibold mb-2">Mid-week Communion Service</h3>
                     <p>5:00 PM</p>
                 </div>
@@ -169,25 +169,28 @@
     <!-- Activity Sunday Programmes -->
     <section class="py-16 px-4 md:px-8 bg-white">
         <div class="max-w-7xl mx-auto text-center">
-            <h2 class="text-3xl font-bold text-maroon">Activity Sunday Programmes</h2>
+            <h2 data-aos="fade-up" class="text-3xl font-bold text-maroon">Activity Sunday Programmes</h2>
             <div class="w-24 h-1 bg-gold mx-auto mt-4 mb-12"></div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
+                <div data-aos="zoom-in" class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
                     <i data-feather="book" class="w-10 h-10 text-gold mx-auto mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Book Review</h3>
                     <p>Interactive reviews of faith-based books.</p>
                 </div>
-                <div class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
+                <div data-aos="zoom-in" data-aos-delay="100"
+                    class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
                     <i data-feather="message-square" class="w-10 h-10 text-gold mx-auto mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Debate</h3>
                     <p>Sharpening minds with healthy arguments.</p>
                 </div>
-                <div class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
+                <div data-aos="zoom-in" data-aos-delay="200"
+                    class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
                     <i data-feather="help-circle" class="w-10 h-10 text-gold mx-auto mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Quiz</h3>
                     <p>Fun competitions testing Bible knowledge.</p>
                 </div>
-                <div class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
+                <div data-aos="zoom-in" data-aos-delay="300"
+                    class="bg-maroon text-white p-6 rounded-lg hover:scale-105 transition">
                     <i data-feather="mic" class="w-10 h-10 text-gold mx-auto mb-4"></i>
                     <h3 class="text-xl font-semibold mb-2">Talk Show</h3>
                     <p>Open discussions on life and faith.</p>
@@ -199,23 +202,26 @@
     <!-- Quick Links -->
     <section class="py-16 px-4 md:px-8 bg-gradient-to-b from-maroon to-maroon/90 text-white">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12 text-gold">Explore Our Ministry</h2>
+            <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-12 text-gold">Explore Our Ministry</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
+                <div data-aos="flip-left"
+                    class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
                     <i data-feather="target" class="w-12 h-12 mx-auto mb-4 text-gold"></i>
                     <h3 class="text-xl font-semibold mb-4">Liberation Mandate</h3>
                     <p class="mb-6">Discover our divine calling and purpose as a ministry</p>
                     <a href="mandate.html"
                         class="btn-primary inline-block bg-gold text-maroon py-2 px-6 rounded-full">Learn More</a>
                 </div>
-                <div class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
+                <div data-aos="flip-left" data-aos-delay="150"
+                    class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
                     <i data-feather="book-open" class="w-12 h-12 mx-auto mb-4 text-gold"></i>
                     <h3 class="text-xl font-semibold mb-4">Spiritual Resources</h3>
                     <p class="mb-6">Access life-transforming books and teachings</p>
                     <a href="books.html"
                         class="btn-primary inline-block bg-gold text-maroon py-2 px-6 rounded-full">View Resources</a>
                 </div>
-                <div class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
+                <div data-aos="flip-left" data-aos-delay="300"
+                    class="bg-white text-maroon p-8 rounded-lg text-center shadow hover:scale-105 transition">
                     <i data-feather="users" class="w-12 h-12 mx-auto mb-4 text-gold"></i>
                     <h3 class="text-xl font-semibold mb-4">Teen Community</h3>
                     <p class="mb-6">Join our vibrant community of young believers</p>
@@ -230,15 +236,15 @@
     <section class="py-16 px-4 md:px-8 bg-white">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-maroon">What Teens Are Saying</h2>
+                <h2 data-aos="fade-up" class="text-3xl font-bold text-maroon">What Teens Are Saying</h2>
                 <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="bg-maroon text-white p-8 rounded-lg">
+                <div data-aos="fade-right" class="bg-maroon text-white p-8 rounded-lg">
                     <p class="italic">"Winners Teens has helped me understand my identity in Christ and given me
                         confidence to stand for my faith in school."</p>
                 </div>
-                <div class="bg-maroon text-white p-8 rounded-lg">
+                <div data-aos="fade-left" class="bg-maroon text-white p-8 rounded-lg">
                     <p class="italic">"The books and teachings have transformed my prayer life and helped me make better
                         decisions about my future."</p>
                 </div>
@@ -247,7 +253,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-maroon py-12 px-4 md:px-8 text-white">
+    <footer class="bg-maroon py-12 px-4 md:px-8 text-white" data-aos="fade-up">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
                 <div>
@@ -266,21 +272,12 @@
                 <div>
                     <h3 class="text-xl font-bold mb-4 text-gold">Connect With Us</h3>
                     <div class="flex space-x-4">
-                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        <a href="https://www.instagram.com/lfcijebuodeteens?utm_source=ig_web_button_share_sheet"
                             class="w-10 h-10 rounded-full bg-white text-maroon flex items-center justify-center hover:bg-gold hover:text-maroon">
                             <i data-feather="instagram"></i>
                         </a>
-                        <!-- <a href="#"
-                            class="w-10 h-10 rounded-full bg-white text-maroon flex items-center justify-center hover:bg-gold hover:text-maroon">
-                            <i data-feather="facebook"></i>
-                        </a>
-                        <a href="#"
-                            class="w-10 h-10 rounded-full bg-white text-maroon flex items-center justify-center hover:bg-gold hover:text-maroon">
-                            <i data-feather="youtube"></i>
-                        </a> -->
-                        <!-- WhatsApp -->
                         <a href="https://wa.me/234XXXXXXXXXX"
-                            class="w-10 h-10 rounded-full bg-white text-maroon flex items-center justify-center hover:bg-gold hover:text-maroon transition">
+                            class="w-10 h-10 rounded-full bg-white text-maroon flex items-center justify-center hover:bg-gold hover:text-maroon">
                             <i data-feather="message-circle"></i>
                         </a>
                     </div>
@@ -292,7 +289,12 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        AOS.init({ duration: 1000, once: true });
+
+        // Slideshow
         let currentSlide = 0;
         const slides = document.querySelectorAll('.slide');
         function showSlide(n) {
@@ -300,25 +302,17 @@
             currentSlide = (n + slides.length) % slides.length;
             slides[currentSlide].classList.add('active');
         }
-        function nextSlide() { showSlide(currentSlide + 1); }
-        setInterval(nextSlide, 5000);
+        setInterval(() => showSlide(currentSlide + 1), 5000);
 
         feather.replace();
 
+        // Mobile menu toggle
         const menuBtn = document.getElementById("menu-btn");
         const mobileMenu = document.getElementById("mobile-menu");
-
-        if (menuBtn) {
-            menuBtn.addEventListener("click", () => {
-                mobileMenu.classList.toggle("hidden");
-            });
-        }
-
-
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
     </script>
-
-
-
 
 </body>
 
